@@ -8,5 +8,5 @@ import java.util.Map;
  *
  */
 public interface ISymptomWriter {
-// WRITE YOUR CODE HERE
+public void writeSymptom(Map<String,Integer>symptom);
 }

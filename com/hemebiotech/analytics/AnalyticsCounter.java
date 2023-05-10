@@ -16,11 +16,6 @@ import java.util.TreeMap;
  */
 public class AnalyticsCounter { 
      
-  // Déclaration des compteurs pour les symptômes individuels 
-  private static int headacheCount = 0; 
-  private static int rashCount = 0; 
-  private static int pupilCount = 0; 
-     
   // Interface pour la lecture de données de symptômes 
   private ISymptomReader read; 
      
@@ -86,47 +81,5 @@ public class AnalyticsCounter {
       int count = entry.getValue(); 
       write.writeSymptoms(sortedMap); 
     } 
-  } 
-     
-  /** 
- 
-  Classe principale pour la lecture et l'analyse des symptômes dans un fichier. 
-  */
- 
-  /** 
- 
-  Méthode principale pour l'analyse des symptômes dans un fichier. 
- 
-  @param args les arguments de la ligne de commande 
- 
-  @throws Exception si une exception se produit lors de la lecture du fichier 
-  */ 
-  public static void main(String[] args) throws Exception { 
- 
-    // lecture du fichier d'entrée 
-    BufferedReader reader = new BufferedReader(new FileReader("symptoms.txt")); 
-    String line = reader.readLine(); 
-   
-    int i = 0; 
-    int headCount = 0; 
-    int rashCount = 0; 
-    int pupilCount = 0; 
- 
-    // boucle pour compter les symptômes 
-    while (line != null) { 
-      i++; 
-      System.out.println("symptôme du fichier : " + line);
-
-      //génération du fichier de sortie
-      FileWriter writer = new FileWriter("result.out"); 
-      writer.write("maux de tête : " + headCount + "\n"); 
-      writer.write("rash : " + rashCount + "\n"); 
-      writer.write("pupilles dilatées : " + pupilCount + "\n"); 
-      writer.close(); 
- 
-      // affichage des symptômes lus du fichier
-      ReadSymptomDataFromFile read = new ReadSymptomDataFromFile("symptoms.txt");
-      read.getSymptoms();
-    }
   }
 }

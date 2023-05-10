@@ -23,11 +23,16 @@ public class Main {
     ISymptomWriter writer = new WriteSymptomDataToFile(); 
     ISymptomReader reader = new ReadSymptomDataFromFile("symptoms.txt"); 
     AnalyticsCounter counter = new AnalyticsCounter(reader, writer); 
+
+    List<String> symptoms = reader.getSymptoms();
  
     // Récupération des symptômes et comptage de leur occurrence 
-    Map<String, Integer> symptoms = counter.countSymptoms(); 
+    Map<String, Integer> symptomByNumber = counter.countSymptoms(symptoms); 
  
+    // Trier les symptoms
+    Map<String,Integer> symptomByNumberSorted = counter.sortSymptoms(symptomByNumber);
+
     // Écriture des résultats dans le fichier de sortie 
-    writer.writeSymptoms(symptoms); 
+    writer.writeSymptoms(symptomByNumberSorted);
   } 
 }

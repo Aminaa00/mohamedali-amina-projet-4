@@ -46,18 +46,18 @@ public class AnalyticsCounter {
      * @return Map contenant le nombre d'occurrences de chaque symptôme 
      */ 
   public Map<String, Integer> countSymptoms(List<String> symptoms) { 
-    Map<String, Integer> mamap = new HashMap<String, Integer>(); 
+    Map<String, Integer> symptomMap = new HashMap<String, Integer>(); 
          
     for (String currentSymptom : symptoms) { 
-      if (mamap.get(currentSymptom) == null) { 
-        mamap.put(currentSymptom, 1); 
+      if (maMap.get(currentSymptom) == null) { 
+        maMap.put(currentSymptom, 1); 
       } else { 
-        int nouvelleValeur = mamap.get(currentSymptom) + 1; 
-        mamap.put(currentSymptom, nouvelleValeur); 
+        int newValue = maMap.get(currentSymptom) + 1; 
+        maMap.put(currentSymptom, newValue); 
       } 
     } 
          
-    return mamap; 
+    return maMap; 
   } 
      
   /** 

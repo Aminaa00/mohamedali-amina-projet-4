@@ -49,15 +49,15 @@ public class AnalyticsCounter {
     Map<String, Integer> symptomMap = new HashMap<String, Integer>(); 
          
     for (String currentSymptom : symptoms) { 
-      if (maMap.get(currentSymptom) == null) { 
-        maMap.put(currentSymptom, 1); 
+      if (symptomMap.get(currentSymptom) == null) { 
+        symptomMap.put(currentSymptom, 1); 
       } else { 
-        int newValue = maMap.get(currentSymptom) + 1; 
-        maMap.put(currentSymptom, newValue); 
+        int newValue = symptomMap.get(currentSymptom) + 1; 
+        symptomMap.put(currentSymptom, newValue); 
       } 
     } 
          
-    return maMap; 
+    return symptomMap; 
   } 
      
   /** 
